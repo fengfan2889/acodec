@@ -101,7 +101,7 @@ public final class ADPCMCodec extends AudioCodec
             vpdiff = (step >> 3);
 
             if ( diff >= step ) {
-                delta = 4;
+                delta |= 4;
                 diff -= step;
                 vpdiff += step;
             }
@@ -139,9 +139,9 @@ public final class ADPCMCodec extends AudioCodec
 
 	        /* Step 6 - Output value */
             if ( bufferstep != 0 ) {
-                outputbuffer = (delta << 4) & 0xf0;
+                outputbuffer = (delta << 4) ;
             } else {
-	            outp[k++] = (byte)((delta & 0x0f) | outputbuffer);
+	            outp[k++] = (byte)((delta) | outputbuffer);
             }
             bufferstep = bufferstep == 0 ? 1 : 0;
         }

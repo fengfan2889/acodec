@@ -6,7 +6,7 @@
 
     <groupId>cn.org.hentai</groupId>
     <artifactId>acodec</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <name>acodec</name>
     <description>A Java Audio Codec for G711A/G711U/ADPCM.</description>
